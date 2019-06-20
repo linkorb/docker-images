@@ -16,5 +16,7 @@ RUN chmod +x /usr/bin/composer
 COPY httpd.conf /etc/apache2/sites-enabled/000-default.conf
 COPY php.ini /usr/local/etc/php/php.ini
 
-EXPOSE 9000
+RUN chown -R www-data /var/www
 USER www-data
+
+EXPOSE 9000
